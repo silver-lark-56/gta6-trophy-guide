@@ -30,6 +30,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 1,
+   "chapter": 1,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -49,6 +50,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 1,
+   "chapter": 1,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -67,6 +69,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 1,
+   "chapter": 2,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -85,6 +88,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 3,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -103,6 +107,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 4,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -139,6 +144,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 1,
+   "chapter": 2,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -158,6 +164,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 3,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -177,6 +184,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 4,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -196,6 +204,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 4,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -215,6 +224,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 2,
+   "chapter": 4,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -235,6 +245,7 @@
    "hidden": true,
    "kind": "story",
    "stage": 3,
+   "chapter": 5,
    "missable": false,
    "unconfirmed": false,
    "count": null,
@@ -258,6 +269,7 @@
    "unconfirmed": false,
    "count": null,
    "countLabel": "35 CHECKLIST ITEMS",
+   "progress": {"target": 35, "unit": "checklist items"},
    "guide": "Complete the in-game 100% checklist — 35 requirements in three groups (Story & Tasks 12, Exploration & Activities 20, Discovery 3), viewable after the story at Progress > Stats > 100% Completion. Progress made during the story already counts, and nothing on the checklist is missable. Most categories need only partial progress (roughly 60% true completion); only five types need everything — 39/39 gang operations, 33/33 underwater discoveries, 42/42 shooting-range golds, 42/42 drone time trials, 15/15 Bret Target Decks.",
    "sources": [
     {"name": "PowerPyx — GTA 6 100% Completion Checklist", "url": "https://www.powerpyx.com/gta-6-100-completion-checklist-guide/"},
@@ -276,6 +288,7 @@
    "unconfirmed": false,
    "count": 250,
    "countLabel": "250 STUNTS",
+   "progress": {"target": 250, "unit": "stunts"},
    "guide": "Complete any 250 of the game's 397 stunts: 130 stunt jumps, 202 under-the-bridge flights, 40 knife flights, 25 base jumps. Under-the-bridge flights are the quickest category. The 100% checklist needs 300, so this pops on the way to A Long Road. Track it at Progress > Activities > Stunts.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -295,6 +308,7 @@
    "unconfirmed": false,
    "count": null,
    "countLabel": "9 ACTIVITY TYPES",
+   "progress": {"target": 9, "unit": "activity types"},
    "guide": "Try each of the 9 activity types once: fishing, hunting, golf, shooting range, pool, basketball (sink a hoop), an arcade game, winning a race (car, race challenge or Top Fun drone race), and performing a stunt. Track it at Progress > Activities.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -313,6 +327,7 @@
    "unconfirmed": false,
    "count": 42,
    "countLabel": "42 SHOOTING RANGE CHALLENGES",
+   "progress": {"target": 42, "unit": "range golds"},
    "guide": "Earn gold in all 42 Shooting Range challenges across 12 range locations. At each range, buy a Waiver Pass ($5) from the store clerk to unlock the challenges on the map; each is a timed course or a score target. Track it at Progress > Activities > Shooting Ranges.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -332,6 +347,7 @@
    "unconfirmed": false,
    "count": 14,
    "countLabel": "14 DRONE RACE LOCATIONS",
+   "progress": {"target": 14, "unit": "locations"},
    "guide": "Win a Top Fun drone race at each of the 14 locations (42 races total, 3 per location). The first two races at each location need a par time beaten to unlock the third, which only needs a finish. The 100% checklist needs all 42 time trials. Track it at Progress > Activities > Top Fun Drones.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -351,6 +367,7 @@
    "unconfirmed": false,
    "count": 20,
    "countLabel": "20 DIFFERENT RACES",
+   "progress": {"target": 20, "unit": "races"},
    "guide": "Win 20 different races — repeats of the same race do not count; there are 40 unique race locations. The 100% checklist needs 30 won. Races show as blue icons when within about 100 m; filter via Map > Activities > Racing.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -463,6 +480,7 @@
    "unconfirmed": false,
    "count": 8,
    "countLabel": "8 STRANGER STRANDS",
+   "progress": {"target": 8, "unit": "strands"},
    "guide": "Complete 8 qualifying stranger mission strands. Confirmed counting: Kirk (Skunk Ape), Kyle (McKittrick Farm), Yago (street races), Pilot Pete (deliveries). Confirmed NOT counting: Moses, Tyrone, Yasmani, Andy, Billy, Eddie. Which other strands qualify is still being confirmed by the guides — this guide does not present a full list of 8. Not needed for 100%, but its quests count toward the 100 optional tasks.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -481,6 +499,7 @@
    "unconfirmed": false,
    "count": 16,
    "countLabel": "16 SPORTS CARS",
+   "progress": {"target": 16, "unit": "sports cars"},
    "guide": "'Randy's Wish List' opens after the Chapter 3 mission 'Clonin' Keys, Makin' GS', which unlocks the Key Cloner. Deliver the 16 sports cars on his list to his garage in west Vice City (green RK icon); the Zorrusso is auto-delivered. Scan cars with the WAiNK app to check the list; hotel driveways around Vice Beach and Ocean Beach are the best hunting grounds. Track via Map > Robberies. Still available after the story.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -517,7 +536,8 @@
    "unconfirmed": false,
    "count": 18,
    "countLabel": "18 MEDITATION SPOTS",
-   "guide": "Meditate at all 18 spots across 10 locations — meditating with both Jason and Lucia counts +2 at the same spot. THE missable one: in Chapter 1, the morning after 'Down to Earth', talk to Lucia in the kitchen at Jason's house; she walks to the balcony — follow her and choose 'Accept'. Gone after Chapter 1. The final meditation needs both characters together, after 'Coffee Break' (Chapter 2). PowerPyx, GTABase and KeenGamer agree.",
+   "progress": {"target": 18, "unit": "spots"},
+   "guide": "Meditate at all 18 spots across 10 locations [1] — meditating with both Jason and Lucia counts +2 at the same spot. THE missable one: in Chapter 1, the morning after 'Down to Earth', talk to Lucia in the kitchen at Jason's house; she walks to the balcony — follow her and choose 'Accept' [1][2]. That interaction is gone after Chapter 1, and whether it is strictly required is still unclear in every guide [1] — do it anyway and keep a manual save from Chapter 1. The final meditation needs both characters together, after 'Coffee Break' (Chapter 2). Track your spots under Progress, then Collections, then Exploration, then Meditations [1][2].",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
     {"name": "GTABase — GTA 6 Trophies List", "url": "https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series"},
@@ -556,6 +576,7 @@
    "unconfirmed": false,
    "count": 3,
    "countLabel": "3 CARD SETS",
+   "progress": {"target": 3, "unit": "card sets"},
    "guide": "Complete any 3 of the 18 Collectible Card sets — 480 unique cards in total, 18–36 per set, with some duplicates in multiple locations. The 100% checklist needs 15 of the 18 sets. Track at Progress > Collections > Collectible Cards.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -575,6 +596,7 @@
    "unconfirmed": false,
    "count": 100,
    "countLabel": "100 WAINK LOCATIONS",
+   "progress": {"target": 100, "unit": "locations"},
    "guide": "Scan 100 WAiNK locations with the phone app (hold Up on the D-pad, then R1); more than 100 exist — 31 landmarks, 35 curiosities, 23 sculptures, plus No Flusher tags. A popup appears when a scannable location is nearby while on foot (not in a vehicle). Track at Progress > Collections > Waink Locations.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -593,6 +615,7 @@
    "unconfirmed": false,
    "count": 50,
    "countLabel": "50 CHALLENGES",
+   "progress": {"target": 50, "unit": "challenges"},
    "guide": "Complete any 50 of the 80 Challenges (8 categories of 10); the 100% checklist needs 70. Track at Progress > Challenges — completed ones show a tick. Many complete passively during other trophy work.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -650,6 +673,7 @@
    "unconfirmed": false,
    "count": 100,
    "countLabel": "100 VEHICLES",
+   "progress": {"target": 100, "unit": "vehicles"},
    "guide": "Scan 100 different vehicles with the WAiNK app (hold Up, look at the vehicle, hold R1); scanning is enough, driving is not required. There are 557 vehicles at launch. The 100% checklist needs 200 of the 277 base models scanned; the 280 Standout Vehicles do not count toward it. Track at Touchpad > Progress > Vehicles. Different regions have different traffic — supercars around Ocean Beach hotels, vans and trucks in Port Gellhorn.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -745,6 +769,7 @@
    "unconfirmed": false,
    "count": 5,
    "countLabel": "5 BANK VAULTS",
+   "progress": {"target": 5, "unit": "vaults"},
    "guide": "Bank vaults open with the Chapter 4 optional mission 'That's Where The Money Is… (Wait at the Cafe)'. Tail a security van to its bank and enter the vault while it is open (a guard carries a briefcase of cash in, then the vault is temporarily open). Bring the partner: the haul is too heavy for one character, so hand a bag over (hold Right). Vaults always give 4 stars; escape on a fast bike, then switch vehicles. 5 of the 8 vaults are enough for this trophy, but the 100% checklist needs all 8; each pays up to $205,000.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -801,6 +826,7 @@
    "unconfirmed": false,
    "count": 9,
    "countLabel": "9 GANGS",
+   "progress": {"target": 9, "unit": "gangs"},
    "guide": "Rob one illegal operation (yellow map icons) from each of the 9 gangs; there are 39 operations in total, and the 100% checklist needs all 39. Track at Progress > Gangs. Operations are marked when you enter their location; 19 are marked automatically from story progress.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -859,6 +885,7 @@
    "unconfirmed": false,
    "count": 3,
    "countLabel": "3 KEY VALUABLES",
+   "progress": {"target": 3, "unit": "valuables"},
    "guide": "The Kolt & Associates alley is Kingpin Bowling, a gang operation in Port Gellhorn, first marked by 'Hit Kingpin Bowling' in Chapter 2. Steal its 3 key valuables: the luxury watch (south-east office), the 'Gutterball Moreland 850' shotgun (north-east table), and the office safe (bring sticky bombs; GTABase places it in the north-east hallway). The trophy pops once you lose the police. Not missable: the operation respawns, so remaining items can be collected on a later visit — though the respawn takes a long time.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -897,6 +924,7 @@
    "unconfirmed": false,
    "count": 500,
    "countLabel": "500 PROFILE ACTIONS",
+   "progress": {"target": 500, "unit": "actions"},
    "guide": "Perform 500 actions that affect your Criminal Profile; most players earn it passively through robberies and fights. The trophy list itself shows a counter. Enable Criminal Profile notifications under Settings > UI > HUD Notifications to watch the count. Warning: the Irredeemable criminal profile is permanent — do not push toward it. Profiles run Professional / Hardened / Violent / Psycho / Irredeemable.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -977,6 +1005,7 @@
    "unconfirmed": false,
    "count": 250000,
    "countLabel": "$250,000 MARKED BILLS",
+   "progress": {"target": 250000, "unit": "marked bills", "step": 10000, "money": true},
    "guide": "Finish the Chapter 3 mission 'Credit Check (Meet Raul's Crew)' to get the Dye Pack Jammer. Rob banks and Payday Loans, then sell the marked bills to a fence; Yasmani in Vice City pays the most. Cumulative running total; the robberies done for the 100% checklist get you there (a single large bank can yield up to $205,000).",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -996,6 +1025,7 @@
    "unconfirmed": false,
    "count": 100000,
    "countLabel": "$100,000 SPENT",
+   "progress": {"target": 100000, "unit": "spent", "step": 5000, "money": true},
    "guide": "Cumulative $100,000 spent across every kind of shop. Guns, car mods and tattoos burn through it fastest.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -1014,6 +1044,7 @@
    "unconfirmed": false,
    "count": 8,
    "countLabel": "8 GARAGES",
+   "progress": {"target": 8, "unit": "garages"},
    "guide": "Buy all 8 purchasable garages via the Vice City Real Estate phone app, about $160,000 in total; the 4 garages the story gives you do not count. Available after the Chapter 2 mission 'Daily Driver (Steal the Crawler for Moses)'.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},
@@ -1033,6 +1064,7 @@
    "unconfirmed": false,
    "count": 10,
    "countLabel": "10 VEHICLES",
+   "progress": {"target": 10, "unit": "vehicles"},
    "guide": "The Scooter Bros app is installed after the Chapter 2 mission 'Moses (Take A Vehicle to Moses)'. Take a stolen car to Moses' garage in Port Gellhorn, Respray, then Register. Needs free garage space; each registration costs money, so use cheap cars and bikes. At first Moses only takes cars without trackers; from Chapter 3, standard-tracker cars can be registered at any Pay 'n' Spray.",
    "sources": [
     {"name": "PowerPyx — GTA 6 Trophy Guide & Roadmap", "url": "https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/"},

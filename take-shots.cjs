@@ -20,16 +20,19 @@ async function takeShot(browser, shot) {
     if (msg.type() === 'error') console.log('CONSOLE', shot.file, msg.text().slice(0, 300));
   });
   await page.addInitScript(
-    ({ key, earned, spoiler }) => {
-      localStorage.setItem(key, JSON.stringify({ version: 1, earned, spoiler: spoiler === true }));
+    ({ key, earned, spoiler, counts }) => {
+      localStorage.setItem(key, JSON.stringify({ version: 2, earned, spoiler: spoiler === true, counts: counts || {} }));
     },
-    { key: STORAGE_KEY, earned: shot.earned || [], spoiler: shot.spoiler === true },
+    { key: STORAGE_KEY, earned: shot.earned || [], spoiler: shot.spoiler === true, counts: shot.counts || {} },
   );
   await page.goto(BASE + shot.path, { waitUntil: 'load' });
   if (shot.path.includes('#roadmap')) {
     await page.waitForSelector('#roadmap-stages .stage-card', { timeout: 15000 });
+    await page.waitForSelector('#counts-grid .count-cell', { timeout: 15000 });
   } else if (shot.path.includes('#missables')) {
     await page.waitForSelector('#missable-hero h3', { timeout: 15000 });
+  } else if (shot.path.includes('#sources')) {
+    await page.waitForSelector('#sources-rows tr', { timeout: 15000 });
   } else {
     await page.waitForSelector('#trophy-list .trophy-row', { timeout: 15000 });
   }

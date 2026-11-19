@@ -19,14 +19,19 @@ export function stageProgress(trophies, earned) {
 // The next trophy to chase: the first unearned trophy in stage order, except
 // the platinum (id 1), which only becomes next once the other 54 are earned.
 // The reason is the guide's first sentence — the one thing to do right now.
-export function computeNextUpTrophy(trophies, earned) {
+// `isHidden` (optional) skips trophies the spoiler setting masks, so Next up
+// never names a trophy the reader chose not to see; when every remaining
+// trophy is hidden it returns { trophy: null } and the card says so.
+export function computeNextUpTrophy(trophies, earned, isHidden) {
   const ordered = [...trophies].sort((a, b) => a.stage - b.stage || a.id - b.id);
   const rest = ordered.filter((t) => t.id !== 1 && !earned.has(t.id));
   if (rest.length === 0) {
     const platinum = ordered.find((t) => t.id === 1);
     return { trophy: platinum, reason: 'Earn the other 54 trophies and this one pops.' };
   }
-  const next = rest[0];
+  const visible = isHidden ? rest.filter((t) => !isHidden(t)) : rest;
+  if (visible.length === 0) return { trophy: null, reason: '' };
+  const next = visible[0];
   const firstSentence = next.guide.split(/(?<=[.!?])\s/)[0];
   return { trophy: next, reason: firstSentence };
 }

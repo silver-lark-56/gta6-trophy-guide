@@ -19,6 +19,24 @@ export function isSpoilerMasked(trophy, state) {
   return state.spoiler && STORY_KINDS.has(trophy.kind) && !state.earned.has(trophy.id);
 }
 
+// "3/18 spots" for ordinary counts, "$50,000 / $250,000" for money targets.
+// Shared by the row indicator and the guide panel so both read the same.
+export function formatProgress(trophy, value) {
+  const target = trophy.progress.target;
+  if (trophy.progress.money) {
+    const fmt = (n) => `$${n.toLocaleString('en-US')}`;
+    return `${fmt(value)} / ${fmt(target)}`;
+  }
+  return `${value}/${target} ${trophy.progress.unit}`;
+}
+
+export function currentCount(trophy, state) {
+  if (!trophy.progress) return 0;
+  const raw = state.counts ? state.counts[trophy.id] : 0;
+  const value = Number.isInteger(raw) ? raw : 0;
+  return Math.max(0, Math.min(trophy.progress.target, value));
+}
+
 export function filterTrophiesByState(trophies, state) {
   const kindFilter = KIND_FILTERS.find((k) => k.id === state.kind) ?? KIND_FILTERS[0];
   const query = state.query.trim().toLowerCase();
@@ -124,6 +142,28 @@ function renderTrophyRow(trophy, state, onToggleEarned, onSelectTrophy) {
   main.append(chips);
   row.append(main);
 
+  // Right-hand meta: the story chapter (a bare number — it names nothing,
+  // so it stays visible even for masked rows) and, for countable trophies,
+  // the reader's own running count once they have started it.
+  const meta = document.createElement('div');
+  meta.className = 'trophy-meta';
+  if (trophy.chapter) {
+    const chapter = document.createElement('span');
+    chapter.className = 'trophy-chapter';
+    chapter.textContent = `Chapter ${trophy.chapter}`;
+    meta.append(chapter);
+  }
+  if (trophy.progress) {
+    const done = currentCount(trophy, state);
+    if (done > 0) {
+      const progress = document.createElement('span');
+      progress.className = 'trophy-progress';
+      progress.textContent = formatProgress(trophy, done);
+      meta.append(progress);
+    }
+  }
+  if (meta.childElementCount > 0) row.append(meta);
+
   row.addEventListener('click', () => onSelectTrophy(trophy.id));
   return row;
 }
@@ -152,7 +192,8 @@ export function renderTrophyChecklist(listEl, trophies, state, onToggleEarned, o
 export function renderListStatus(statusEl, shownCount, totalCount, state) {
   const kindLabel = KIND_FILTERS.find((k) => k.id === state.kind)?.label.toLowerCase() ?? 'all kinds';
   const spoilerNote = state.spoiler
-    ? 'Spoilers on: hidden story trophies stay masked until earned.'
-    : 'Spoilers off: every name and description is shown.';
-  statusEl.textContent = `Showing ${shownCount} of ${totalCount} trophies (${kindLabel}). ${spoilerNote}`;
+    ? 'Spoilers on: story trophies masked until earned.'
+    : 'Spoilers off: all names shown.';
+  const kindPart = state.kind === 'all' ? '' : ` (${kindLabel})`;
+  statusEl.textContent = `Showing ${shownCount} of ${totalCount} trophies${kindPart}. ${spoilerNote}`;
 }

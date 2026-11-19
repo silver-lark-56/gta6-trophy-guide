@@ -12,12 +12,11 @@
   <div id="site-title">
     <p id="site-kicker">Grand Theft Auto VI · PlayStation 5 · Works offline</p>
     <h1>Leonida Complete</h1>
-    <p id="site-subtitle">All 55 trophies with official names, descriptions and grades, cited guides in our own words, a roadmap to the platinum, and a checklist that remembers you.</p>
+    <p id="site-subtitle">All 55 trophies — official names, cited guides, roadmap, checklist.</p>
   </div>
   <section id="progress-card" aria-label="Platinum progress">
-    <p id="progress-count"><strong id="progress-earned">0</strong> / 55</p>
+    <p id="progress-count"><strong id="progress-earned">0</strong> / 55 <span id="progress-summary"></span></p>
     <div id="progress-bar" role="progressbar" aria-label="Progress to platinum"><div id="progress-fill"></div></div>
-    <p id="progress-summary">0 earned · 55 to go · platinum 0% there</p>
     <p id="progress-grades">platinum 0/1 · gold 0/2 · silver 0/6 · bronze 0/46</p>
     <p id="progress-roadmap">Roadmap: S1 0/4 · S2 0/6 · S3 0/2 · S4 0/7 · S5 0/8 · S6 0/6 · S7 0/10 · S8 0/12</p>
     <p id="progress-nextup">Next up: Just Like Paradise — finish the opening mission, Gone Fishing.</p>
@@ -36,7 +35,7 @@
 <main>
   <section id="view-tracker" class="view active" aria-label="Trophy tracker">
     <div id="filter-bar">
-      <label id="search-label">Search <input id="search-box" type="search" placeholder="Trophy name, mission, keyword…" autocomplete="off"></label>
+      <label id="search-label">Search <input id="search-box" type="search" placeholder="Search trophies…" autocomplete="off"></label>
       <div id="filter-kind" role="group" aria-label="Filter by kind"></div>
       <label id="grade-label">Grade <select id="grade-filter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
       <label id="spoiler-label"><input id="spoiler-toggle" type="checkbox"> Hide story spoilers</label>
@@ -45,8 +44,8 @@
       <button id="export-progress" type="button">Export progress</button>
       <label id="import-label">Import progress <input id="import-progress" type="file" accept="application/json,.json"></label>
       <button id="reset-progress" type="button">Reset</button>
+      <p id="list-status">Showing 55 of 55 trophies (all kinds). Spoilers off: every name and description is shown.</p>
     </div>
-    <p id="list-status">Showing 55 of 55 trophies (all kinds). Spoilers off: every name and description is shown.</p>
     <div id="tracker-columns">
       <ul id="trophy-list" aria-label="Trophy checklist"></ul>
       <aside id="guide-panel" aria-label="Selected trophy guide"></aside>
@@ -55,23 +54,15 @@
 
   <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum">
     <h2>Roadmap to the platinum — Vice Got a Price!</h2>
-    <p id="roadmap-intro">One playthrough, about 200 hours, difficulty 4/10 (PowerPyx). No mission replay and no New Game+, so save at the start of every chapter — 15 manual save slots plus 1 autosave. The order below is built from the official descriptions: story first, character finales and stranger strands while they are open, the one possibly-missable meditation early, then activities, collectibles and crime, and the 100% checklist last.</p>
-    <div id="roadmap-layout">
-      <div id="roadmap-stages-column">
-        <ol id="roadmap-stages"></ol>
-      </div>
-      <div id="roadmap-counts-column">
-        <h3>Counts: what each trophy needs vs what 100% needs</h3>
-        <p id="counts-intro">The trophy and the 100% checklist often ask for different amounts of the same thing — the trophy is usually the smaller number. Counts come from the official descriptions and the cited guides.</p>
-        <table id="counts-table">
-          <thead><tr><th>What</th><th>Trophy needs</th><th>100% needs</th><th>Total in game</th></tr></thead>
-          <tbody id="counts-rows"></tbody>
-        </table>
-        <h3>The 100% checklist — gold “A Long Road”</h3>
-        <p id="checklist-intro">35 requirements in three groups. It becomes viewable only after the story, at Progress &gt; Stats &gt; 100% Completion, but progress made during the story already counts. Nothing on it is missable; everything can be finished in free-roam after the story. Only five requirement types need everything: 39/39 gang operations, 33/33 underwater discoveries, 42/42 shooting-range golds, 42/42 drone time trials, 15/15 Bret Target Decks.</p>
-        <div id="checklist-groups"></div>
-      </div>
-    </div>
+    <p id="roadmap-intro">One playthrough, ~200h, 4/10 (PowerPyx). No mission replay — save at each chapter start (15 manual + 1 auto). Story first, then the stages below in order.</p>
+    <ol id="roadmap-stages"></ol>
+    <h3>Counts: what each trophy needs vs what 100% needs</h3>
+    <p id="counts-intro">The trophy and the 100% checklist often ask for different amounts of the same thing. Counts from the official descriptions, PowerPyx&rsquo;s 100% guide and GTABase.</p>
+    <div id="counts-grid"></div>
+    <p id="roadmap-missable"><strong>Missable trophies: 1 — Positive Mental Attitude.</strong> Meditate on Jason&rsquo;s balcony in Chapter 1, the morning after Down to Earth (PowerPyx; GTABase).</p>
+    <h3>The 100% checklist — gold &ldquo;A Long Road&rdquo;</h3>
+    <p id="checklist-intro">35 requirements in three groups. It becomes viewable only after the story, at Progress &gt; Stats &gt; 100% Completion, but progress made during the story already counts. Nothing on it is missable; everything can be finished in free-roam after the story. Only five requirement types need everything: 39/39 gang operations, 33/33 underwater discoveries, 42/42 shooting-range golds, 42/42 drone time trials, 15/15 Bret Target Decks. Five more trophy-vs-100% comparisons (Kenton sets, Bret decks, underwater, animals, marked bills) live in these groups.</p>
+    <div id="checklist-groups"></div>
   </section>
 
   <section id="view-missables" class="view" aria-label="Missable trophies">
@@ -87,9 +78,9 @@
 
   <section id="view-sources" class="view" aria-label="Sources and honesty">
     <h2>Sources &amp; honesty</h2>
-    <p id="sources-intro">Every guide on this site is written in our own words for this entry — a source is cited, never copied. The official trophy names and descriptions are shown as PlayStation publishes them. Each trophy's guide names the guides its facts come from, beside the guide itself; this page maps what each source covers.</p>
+    <p id="sources-intro">Every guide here is written in our own words — a source is cited, never copied. Official names and descriptions are shown as PlayStation publishes them. Each guide names its sources beside itself; this page maps what each source covers.</p>
     <table id="sources-table">
-      <thead><tr><th>Source</th><th>What it covers here</th></tr></thead>
+      <thead><tr><th>Source</th><th>What it covers here</th><th>Retrieved</th></tr></thead>
       <tbody id="sources-rows"></tbody>
     </table>
     <h3>What is not yet known (19 Nov 2026, launch day)</h3>

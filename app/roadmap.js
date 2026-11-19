@@ -4,79 +4,74 @@
 export const ROADMAP_STAGES = [
   {
     n: 1,
-    title: 'Story — Chapters 1–2',
+    title: 'Story 1–2',
     time: '≈25 h',
-    text: 'Play Chapters 1–2 in order. The chapter and mission trophies pop automatically as you finish them — Gone Fishing first, then Paradise Lost, T**s Ass Drug Money and Trust. Do the Chapter 1 balcony meditation the morning after Down to Earth (see Missables) and keep a manual save at the start of each chapter: there is no mission replay.',
+    text: 'Chapters 1–2 in order. Balcony meditation after Down to Earth. Save each chapter.',
     ids: [2, 3, 4, 8],
   },
   {
     n: 2,
-    title: 'Story — Chapters 3–4',
+    title: 'Story 3–4',
     time: '≈35 h',
-    text: 'Chapters 3–4. Vice City, Baby! and Top Of The World, Ma for the chapters, plus Break the Bank (The Cartel Heist), Family Matters (Child\u2019s Play), DWNFALL (Headliners) and Hi-Jacked (VCIA Takedown). Character questlines open as you go — Andy in Chapter 3, Randy and Tyrone after their Chapter 3 missions.',
+    text: 'Chapters 3–4: two chapter trophies, four mission trophies. Start the questlines.',
     ids: [5, 6, 9, 10, 11, 12],
   },
   {
     n: 3,
-    title: 'Story — Chapter 5 + finale',
+    title: 'Story 5 + finale',
     time: '≈15 h',
-    text: 'Chapter 5 and the finale: Snow Storm (Operation Savage Glory), then the gold You Gotta Know When to Get Off for the final mission. After the story, free-roam continues and everything left can be finished without a second playthrough.',
+    text: 'Chapter 5: Snow Storm, then the gold for the final mission. Free-roam after.',
     ids: [7, 13],
   },
   {
     n: 4,
-    title: 'Character finales & stranger strands',
+    title: 'Finales & strands',
     time: '≈15 h',
-    text: 'Finish the character finales and stranger strands: Andy, Kenton, Billy, Randy, Tyrone and Bret, plus 8 Strangers & Freaks strands. All stay available after the story — Kenton returns between Chapters 2–3 after a short absence.',
+    text: 'Finales and strands: Andy, Kenton, Billy, Randy, Tyrone, Bret, 8 strands.',
     ids: [22, 23, 24, 25, 26, 27, 29],
   },
   {
     n: 5,
-    title: 'Activities & challenges',
+    title: 'Activities',
     time: '≈35 h',
-    text: 'Activities and challenges: 250 stunts, 42 shooting-range golds, drone races at 14 locations, 20 different races won, Cal\u2019s fishing challenge, one arcade game finished, 50 challenges, and all 9 activity types tried once. Most of these feed the 100% checklist too.',
+    text: '250 stunts, 42 range golds, drone races, 20 races won, fishing, arcade, 50 challenges.',
     ids: [15, 16, 17, 18, 19, 20, 21, 32],
   },
   {
     n: 6,
-    title: 'Collectibles & 100%',
+    title: 'Collectibles',
     time: '≈50 h',
-    text: 'Collectibles and the 100% checklist: 18 meditations, 3 card sets, 100 WAiNK scans, 100 vehicles discovered, the full map unfogged — and the gold A Long Road for 100% completion. The checklist is lenient (about 60% true completion); only five requirement types need everything.',
+    text: '18 meditations, 3 card sets, 100 WAiNK scans, 100 vehicles, full map, gold A Long Road.',
     ids: [14, 28, 30, 31, 35, 42],
   },
   {
     n: 7,
-    title: 'Crime — robberies & heat',
+    title: 'Crime',
     time: '≈15 h',
-    text: 'Crime: lose a 4-star wanted level with your partner, rob 3 shops back-to-back, 5 enemies in one Combat Focus, the VCIA plane, a Rhino tank, a jewelry store undetected, 5 bank vaults, an armored truck, one illegal operation per gang, and $250,000 in marked bills laundered.',
+    text: '4-star wanted level lost, 3 shops in a row, 5 in one Focus, plane, tank, 5 vaults, $250k.',
     ids: [33, 34, 36, 37, 38, 39, 40, 41, 43, 52],
   },
   {
     n: 8,
-    title: 'Misc one-offs & the platinum',
+    title: 'One-offs & platinum',
     time: '≈10 h',
-    text: 'The one-offs: strength maxed with both characters, 500 profile actions, garages, Scooter Bros registrations, spending — and the four trophies whose methods the guides have not confirmed yet. When the other 54 are earned, Vice Got a Price! pops.',
+    text: 'Strength maxed, 500 profile actions, garages, Scooter Bros, spending — then platinum.',
     ids: [1, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55],
   },
 ];
 
-export const COUNTS_TABLE = [
+export const COUNTS_GRID = [
   ['Stunts', '250', '300', '397 (130 jumps, 202 under-bridges, 40 knife flights, 25 base jumps)'],
   ['Shooting Range gold medals', '42', '42', '42 (12 range locations)'],
-  ['Top Fun drone races', 'win at 14 locations', '42 time trials', '42 (14 locations × 3)'],
+  ['Top Fun drone races', '14 locations', '42 trials', '42 (14 locations × 3)'],
   ['Unique races won', '20 different', '30', '40'],
   ['Challenges', '50', '70', '80 (8 categories × 10)'],
-  ['Meditations', '18', '15', '18 across 10 locations'],
+  ['Meditations', '18', '15', '18'],
   ['Collectible card sets', '3', '15', '18 sets, 480 cards'],
   ['WAiNK locations', '100', '100', '100+ (31 landmarks, 35 curiosities, 23 sculptures)'],
-  ['Vehicles discovered', '100', '200 of 277 base models', '557 vehicles'],
+  ['Vehicles discovered', '100', '200 of 277', '557 vehicles'],
   ['Gang operations', '1 per gang (9 gangs)', '39', '39'],
   ['Bank vaults', '5', '8', '8'],
-  ['Marked bills laundered', '$250,000', '$250,000', '—'],
-  ['Kenton treasure sets', '— (finale)', '5', '7'],
-  ['Bret Target Decks', '— (one animal)', '15', '15'],
-  ['Underwater discoveries', '—', '33', '33'],
-  ['Animals studied', '—', '100', '255'],
   ['Video games', '1 finished', '4 started', '4'],
 ];
 
@@ -112,18 +107,18 @@ export const MISSABLES_CHECKED = [
 ];
 
 export const SOURCES_COVERAGE = [
-  ['PowerPyx — GTA 6 Trophy Guide & Roadmap', 'https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/', 'Method for 51 of 55 trophies; roadmap shape, ~200 h, difficulty 4/10, missable analysis.'],
-  ['PowerPyx — GTA 6 100% Completion Checklist', 'https://www.powerpyx.com/gta-6-100-completion-checklist-guide/', 'The 35-item 100% checklist with every number; the counts table\u2019s backbone.'],
-  ['GTABase — GTA 6 Trophies List', 'https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series', 'Second source for nearly every method; hidden/visible split; questline details.'],
-  ['OutputLag — GTA 6 Trophy List', 'https://outputlag.com/guides/gta-6-trophy-list/', 'Third source for crime and activity methods; Yago time-sensitivity warning (single source).'],
-  ['KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap', 'https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/', 'Roadmap and 100% cross-check; chapter/mission mapping.'],
-  ['GTA Zone — GTA 6 Trophy List', 'https://gta-zone.com/news/gta-6-trophies-achievements/', 'Hidden/visible split; meditation counts; missable consensus.'],
-  ['planetgta6 — GTA 6 Trophies', 'https://www.planetgta6.com/en/gta-6-trophies/', 'Hidden/visible split (from Exophase, cross-checked vs PSNProfiles); day-1 missable caution.'],
-  ['Sportskeeda — All Meditation Spots in GTA 6', 'https://hindi3.sportskeeda.com/gta/all-meditation-spots-gta-6-locations', 'Named meditation locations (partial — about 9 of the 10).'],
-  ['HowToVideoGame — Meditation Spots', 'https://howtovideogame.com/gta-6-meditation-spots/', 'Named meditation locations; spot names.'],
-  ['GTAVibes — GTA 6 100% Completion Checklist', 'https://www.gtavibes.com/guides/gta-6-100-completion-checklist', 'Card sets (18 sets, 480 cards); 100% cross-check.'],
-  ['u7buy — GTA 6 Trophies Guide', 'https://www.u7buy.com/blog/gta-6-trophies/', 'Hidden/visible split; 500 profile actions for Actions Speak Louder.'],
-  ['egamers.io — GTA 6 Trophy List', 'https://egamers.io/gta-6-trophy-list-all-55-trophies-and-achievements-plus-the-hardest-ones/', 'Hidden/visible split; final-mission chapter wording (Chapter 5).'],
+  ['PowerPyx — GTA 6 Trophy Guide & Roadmap', 'https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/', 'Method for 51 of 55 trophies; roadmap shape, ~200 h, difficulty 4/10, missable analysis.', '19 Nov 2026'],
+  ['PowerPyx — GTA 6 100% Completion Checklist', 'https://www.powerpyx.com/gta-6-100-completion-checklist-guide/', 'The 35-item 100% checklist with every number; the counts grid\u2019s backbone.', '19 Nov 2026'],
+  ['GTABase — GTA 6 Trophies List', 'https://www.gtabase.com/articles/gta-6/gta-6-achievements-trophies-list-ps5-xbox-series', 'Second source for nearly every method; hidden/visible split; questline details.', '19 Nov 2026'],
+  ['OutputLag — GTA 6 Trophy List', 'https://outputlag.com/guides/gta-6-trophy-list/', 'Third source for crime and activity methods; Yago time-sensitivity warning (single source).', '19 Nov 2026'],
+  ['KeenGamer — GTA 6 Trophy Guide & Platinum Roadmap', 'https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/', 'Roadmap and 100% cross-check; chapter/mission mapping.', '19 Nov 2026'],
+  ['GTA Zone — GTA 6 Trophy List', 'https://gta-zone.com/news/gta-6-trophies-achievements/', 'Hidden/visible split; meditation counts; missable consensus.', '19 Nov 2026'],
+  ['planetgta6 — GTA 6 Trophies', 'https://www.planetgta6.com/en/gta-6-trophies/', 'Hidden/visible split (from Exophase, cross-checked vs PSNProfiles); day-1 missable caution.', '19 Nov 2026'],
+  ['Sportskeeda — All Meditation Spots in GTA 6', 'https://hindi3.sportskeeda.com/gta/all-meditation-spots-gta-6-locations', 'Named meditation locations (partial — about 9 of the 10).', '19 Nov 2026'],
+  ['HowToVideoGame — Meditation Spots', 'https://howtovideogame.com/gta-6-meditation-spots/', 'Named meditation locations; spot names.', '19 Nov 2026'],
+  ['GTAVibes — GTA 6 100% Completion Checklist', 'https://www.gtavibes.com/guides/gta-6-100-completion-checklist', 'Card sets (18 sets, 480 cards); 100% cross-check.', '19 Nov 2026'],
+  ['u7buy — GTA 6 Trophies Guide', 'https://www.u7buy.com/blog/gta-6-trophies/', 'Hidden/visible split; 500 profile actions for Actions Speak Louder.', '19 Nov 2026'],
+  ['egamers.io — GTA 6 Trophy List', 'https://egamers.io/gta-6-trophy-list-all-55-trophies-and-achievements-plus-the-hardest-ones/', 'Hidden/visible split; final-mission chapter wording (Chapter 5).', '19 Nov 2026'],
 ];
 
 export const SOURCES_UNKNOWN = [
@@ -137,7 +132,6 @@ export const SOURCES_UNKNOWN = [
 
 export function renderRoadmapStages(listEl, trophies, state) {
   listEl.replaceChildren();
-  const byId = new Map(trophies.map((t) => [t.id, t]));
   for (const stage of ROADMAP_STAGES) {
     const earnedCount = stage.ids.filter((id) => state.earned.has(id)).length;
     const card = document.createElement('li');
@@ -146,29 +140,39 @@ export function renderRoadmapStages(listEl, trophies, state) {
     heading.textContent = `Stage ${stage.n} — ${stage.title}`;
     const meta = document.createElement('p');
     meta.className = 'stage-meta';
-    meta.textContent = `${earnedCount} of ${stage.ids.length} earned in this stage · ${stage.time}`;
+    meta.textContent = `${earnedCount}/${stage.ids.length} earned · ${stage.time}`;
     const text = document.createElement('p');
     text.textContent = stage.text;
-    const names = document.createElement('p');
-    names.className = 'stage-trophies';
-    const strong = document.createElement('strong');
-    strong.textContent = 'Trophies: ';
-    names.append(strong, stage.ids.map((id) => byId.get(id)?.name ?? '').join(', '));
-    card.append(heading, meta, text, names);
+    // The trophy-to-stage mapping lives on the tracker rows (Roadmap S# chip)
+    // and the progress card, so the cards stay compact enough that all eight
+    // fit in one screen next to the counts grid.
+    card.append(heading, meta, text);
     listEl.append(card);
   }
 }
 
-export function renderCountsTable(tbodyEl) {
-  tbodyEl.replaceChildren();
-  for (const [what, trophy, hundred, total] of COUNTS_TABLE) {
-    const row = document.createElement('tr');
-    for (const cell of [what, trophy, hundred, total]) {
-      const td = document.createElement('td');
-      td.textContent = cell;
-      row.append(td);
+// The counts as a dense grid: every row of COUNTS_GRID becomes one cell
+// showing the trophy number against the 100% number and the total in game,
+// so the whole comparison fits in one screen next to the stages.
+export function renderCountsGrid(gridEl) {
+  gridEl.replaceChildren();
+  for (const [what, trophy, hundred, total] of COUNTS_GRID) {
+    const cell = document.createElement('div');
+    cell.className = 'count-cell';
+    const label = document.createElement('div');
+    label.className = 'count-label';
+    label.textContent = what;
+    const numbers = document.createElement('div');
+    numbers.className = 'count-numbers';
+    // The parenthetical detail is dropped: the grid shows headline numbers.
+    const totalShort = total.split(' (')[0];
+    if (trophy.startsWith('—')) {
+      numbers.textContent = `100% ${hundred} · ${totalShort} in game`;
+    } else {
+      numbers.textContent = `Trophy ${trophy} · 100% ${hundred} · ${totalShort} total`;
     }
-    tbodyEl.append(row);
+    cell.append(label, numbers);
+    gridEl.append(cell);
   }
 }
 
@@ -220,7 +224,7 @@ export function renderMissablesPage(heroEl, watchEl, checkedEl) {
 
 export function renderSourcesPage(rowsEl, unknownEl) {
   rowsEl.replaceChildren();
-  for (const [name, url, coverage] of SOURCES_COVERAGE) {
+  for (const [name, url, coverage, retrieved] of SOURCES_COVERAGE) {
     const row = document.createElement('tr');
     const nameCell = document.createElement('td');
     const link = document.createElement('a');
@@ -230,7 +234,9 @@ export function renderSourcesPage(rowsEl, unknownEl) {
     nameCell.append(link);
     const coverageCell = document.createElement('td');
     coverageCell.textContent = coverage;
-    row.append(nameCell, coverageCell);
+    const dateCell = document.createElement('td');
+    dateCell.textContent = retrieved;
+    row.append(nameCell, coverageCell, dateCell);
     rowsEl.append(row);
   }
   unknownEl.replaceChildren();

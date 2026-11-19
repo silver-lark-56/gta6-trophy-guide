@@ -11,6 +11,7 @@ import {
   renderKindPills,
   renderTrophyChecklist,
   renderListStatus,
+  isSpoilerMasked,
 } from './tracker.js';
 import { renderGuidePanel } from './guide.js';
 import { stageProgress, computeNextUpTrophy } from './stages.js';
@@ -18,6 +19,7 @@ import { stageProgress, computeNextUpTrophy } from './stages.js';
 const state = {
   trophies: [],
   earned: new Set(),
+  counts: {},
   selectedId: 28,
   kind: 'all',
   grade: 'all',
@@ -50,20 +52,27 @@ function renderProgressCard() {
   const percent = total === 0 ? 0 : Math.round((earnedCount / total) * 100);
   $('progress-earned').textContent = String(earnedCount);
   $('progress-fill').style.width = `${percent}%`;
-  $('progress-summary').textContent = `${earnedCount} earned · ${total - earnedCount} to go · platinum ${percent}% there`;
+  $('progress-summary').textContent = `· ${total - earnedCount} to go · platinum ${percent}% there`;
   const grades = gradeCounts();
   $('progress-grades').textContent = `platinum ${grades.platinum[0]}/${grades.platinum[1]} · gold ${grades.gold[0]}/${grades.gold[1]} · silver ${grades.silver[0]}/${grades.silver[1]} · bronze ${grades.bronze[0]}/${grades.bronze[1]}`;
   const stageBits = stageProgress(state.trophies, state.earned).map(
     (stage) => `S${stage.n} ${stage.done}/${stage.total}`,
   );
-  $('progress-roadmap').textContent = `Roadmap: ${stageBits.join(' · ')}`;
-  const next = computeNextUpTrophy(state.trophies, state.earned);
+  $('progress-roadmap').textContent = stageBits.join(' ');
+  // Next up never names a trophy the spoiler setting hides.
+  const next = computeNextUpTrophy(state.trophies, state.earned, (t) => isSpoilerMasked(t, state));
   const nextUp = $('progress-nextup');
   nextUp.replaceChildren();
+  if (!next.trophy) {
+    const label = document.createElement('strong');
+    label.textContent = 'Next up: a hidden story trophy';
+    nextUp.append(label, ' — spoilers are on; earn it to reveal its name.');
+    return;
+  }
   const label = document.createElement('strong');
   label.textContent = `Next up: ${next.trophy.name}`;
-  const reason = next.reason.length > 60
-    ? `${next.reason.slice(0, next.reason.lastIndexOf(' ', 60))}…`
+  const reason = next.reason.length > 32
+    ? `${next.reason.slice(0, next.reason.lastIndexOf(' ', 32))}…`
     : next.reason;
   nextUp.append(label, ` — ${reason}`);
 }
@@ -82,7 +91,10 @@ function renderTracker() {
     renderTracker();
   });
   const selected = state.trophies.find((t) => t.id === state.selectedId);
-  renderGuidePanel($('guide-panel'), selected, state);
+  renderGuidePanel($('guide-panel'), selected, state, {
+    onSetCount: setCount,
+    onToggleEarned: toggleEarned,
+  });
 }
 
 function renderAll() {
@@ -105,7 +117,7 @@ let roadmapViewsReady = false;
 async function ensureRoadmapViews() {
   if (!roadmapModule) roadmapModule = await import('./roadmap.js');
   if (!roadmapViewsReady) {
-    roadmapModule.renderCountsTable($('counts-rows'));
+    roadmapModule.renderCountsGrid($('counts-grid'));
     roadmapModule.renderChecklistGroups($('checklist-groups'));
     roadmapModule.renderMissablesPage($('missable-hero'), $('missables-watch'), $('missables-checked'));
     roadmapModule.renderSourcesPage($('sources-rows'), $('sources-unknown'));
@@ -115,7 +127,7 @@ async function ensureRoadmapViews() {
 }
 
 function persistProgress() {
-  saveProgressToLocalStorage(state.earned, state.spoiler);
+  saveProgressToLocalStorage(state.earned, state.spoiler, state.counts);
 }
 
 function toggleEarned(id, earned) {
@@ -123,6 +135,33 @@ function toggleEarned(id, earned) {
   else state.earned.delete(id);
   persistProgress();
   renderAll();
+}
+
+// Clamp a sub-progress count into [0, target]; zero means "not started" and
+// is not stored, so the saved payload stays small.
+function setCount(id, value) {
+  const trophy = state.trophies.find((t) => t.id === id);
+  if (!trophy || !trophy.progress) return;
+  const clamped = Math.max(0, Math.min(trophy.progress.target, Math.round(value)));
+  if (clamped === 0) delete state.counts[id];
+  else state.counts[id] = clamped;
+  persistProgress();
+  renderTracker();
+}
+
+// Counts from storage or an import file are only trusted for trophies that
+// actually have a progress target, and clamped into range.
+function cleanCountsForTrophies(rawCounts) {
+  const byId = new Map(state.trophies.map((t) => [t.id, t]));
+  const counts = {};
+  for (const [key, value] of Object.entries(rawCounts || {})) {
+    const id = Number(key);
+    const trophy = byId.get(id);
+    if (!trophy || !trophy.progress || !Number.isInteger(value)) continue;
+    const clamped = Math.max(0, Math.min(trophy.progress.target, value));
+    if (clamped > 0) counts[id] = clamped;
+  }
+  return counts;
 }
 
 function selectTrophy(id) {
@@ -139,6 +178,9 @@ function switchTabFromHash() {
     $(`view-${name}`).classList.toggle('active', name === active);
     $(`tab-${name}`).classList.toggle('active', name === active);
   }
+  // The missable banner lives on the tracker; the roadmap page carries its
+  // own missable banner at the bottom, and the missables page is the banner.
+  $('missable-banner').style.display = active === 'tracker' ? '' : 'none';
   if (active !== 'tracker') {
     ensureRoadmapViews().catch((error) => {
       console.error('Roadmap failed to load:', error);
@@ -166,7 +208,9 @@ function wireControls() {
   $('spoiler-toggle').addEventListener('change', (event) => {
     state.spoiler = event.target.checked;
     persistProgress();
-    renderTracker();
+    // renderAll, not renderTracker: Next up must re-pick a spoiler-safe
+    // trophy the moment the setting changes, not only on reload.
+    renderAll();
   });
   $('earned-only-toggle').addEventListener('change', (event) => {
     state.earnedOnly = event.target.checked;
@@ -177,7 +221,7 @@ function wireControls() {
     renderTracker();
   });
   $('export-progress').addEventListener('click', () => {
-    exportProgressAsJson(state.earned, state.spoiler);
+    exportProgressAsJson(state.earned, state.spoiler, state.counts);
   });
   $('import-progress').addEventListener('change', async (event) => {
     const file = event.target.files[0];
@@ -187,6 +231,7 @@ function wireControls() {
       const knownIds = new Set(state.trophies.map((t) => t.id));
       state.earned = new Set(imported.earned.filter((id) => knownIds.has(id)));
       state.spoiler = imported.spoiler;
+      state.counts = cleanCountsForTrophies(imported.counts);
       $('spoiler-toggle').checked = state.spoiler;
       persistProgress();
       renderAll();
@@ -196,9 +241,10 @@ function wireControls() {
     event.target.value = '';
   });
   $('reset-progress').addEventListener('click', () => {
-    if (!window.confirm('Clear all earned ticks and the spoiler setting?')) return;
+    if (!window.confirm('Clear all earned ticks, counts and the spoiler setting?')) return;
     resetAllProgress();
     state.earned = new Set();
+    state.counts = {};
     state.spoiler = false;
     $('spoiler-toggle').checked = false;
     renderAll();
@@ -211,6 +257,7 @@ async function initLeonidaComplete() {
   const saved = loadSavedProgress();
   const knownIds = new Set(state.trophies.map((t) => t.id));
   state.earned = new Set(saved.earned.filter((id) => knownIds.has(id)));
+  state.counts = cleanCountsForTrophies(saved.counts);
   state.spoiler = saved.spoiler;
   $('spoiler-toggle').checked = state.spoiler;
   wireControls();
